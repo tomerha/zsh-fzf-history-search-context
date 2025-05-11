@@ -6,6 +6,9 @@ you the context around the selected command (what executed before and after).
 It also lets you "jump" into that context with `tab` in order to select another command from there
 to recover.
 
+You may also use `ctrl-/` to toggle the fzf preview pane in case you would like to see longer
+commands.
+
 ## Requirements
 * [fzf](https://github.com/junegunn/fzf)
 
