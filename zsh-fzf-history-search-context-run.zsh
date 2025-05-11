@@ -7,6 +7,7 @@ SELECTED="$3"
 HISTORY_CMD="fc -l -r 0"
 FZF_ARGS="+m -x -e --sync --height $ZSH_FZF_HISTORY_SEARCH_CONTEXT_HEIGHT "
 FZF_ARGS="$FZF_ARGS --style $ZSH_FZF_HISTORY_SEARCH_CONTEXT_STYLE --bind=ctrl-/:toggle-preview"
+FZF_ARGS="$FZF_ARGS --bind change:top"
 FZF_ARGS="$FZF_ARGS +s"  # do not sort
 
 PREVIEW_CMD='(fc -li $(($(echo {1} | sed "s/\*//") - ($FZF_PREVIEW_LINES / 2))) $(($(echo {1} | sed "s/\*//") - 1)) 2>/dev/null | sed -EH "s/^\s*\d+\*?\s*/  /";
