@@ -7,7 +7,7 @@ THIS=$0
 (( ! ${+ZSH_FZF_HISTORY_SEARCH_CONTEXT_BIND} )) &&
 typeset -g ZSH_FZF_HISTORY_SEARCH_CONTEXT_BIND='^r'
 
-# Allow specifying the height for a more compact view (0 is unlimited)
+# Allow specifying the height instead of using the whole screen (0 is unlimited)
 (( ! ${+ZSH_FZF_HISTORY_SEARCH_CONTEXT_HEIGHT} )) &&
 typeset -g ZSH_FZF_HISTORY_SEARCH_CONTEXT_HEIGHT='0'
 
@@ -16,6 +16,9 @@ fzf_history_search_context() {
   TEMP_HISTFILE=$(mktemp)
   trap "{ rm -f $TEMP_HISTFILE ; }" EXIT
   fc -W $TEMP_HISTFILE
+
+  # export env that the script will need
+  export ZSH_FZF_HISTORY_SEARCH_CONTEXT_HEIGHT
 
   # run fzf
   SCRIPT=${THIS:A:h}/zsh-fzf-history-search-context-run.zsh
