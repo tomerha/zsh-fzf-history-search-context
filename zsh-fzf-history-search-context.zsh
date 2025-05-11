@@ -7,6 +7,10 @@ THIS=$0
 (( ! ${+ZSH_FZF_HISTORY_SEARCH_CONTEXT_BIND} )) &&
 typeset -g ZSH_FZF_HISTORY_SEARCH_CONTEXT_BIND='^r'
 
+# Allow specifying the height for a more compact view (0 is unlimited)
+(( ! ${+ZSH_FZF_HISTORY_SEARCH_CONTEXT_HEIGHT} )) &&
+typeset -g ZSH_FZF_HISTORY_SEARCH_CONTEXT_HEIGHT='0'
+
 fzf_history_search_context() {
   # save history to file
   TEMP_HISTFILE=$(mktemp)
