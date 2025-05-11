@@ -9,6 +9,8 @@ to recover.
 You may also use `ctrl-/` to toggle the fzf preview pane in case you would like to see longer
 commands.
 
+![example screenshot](example.png)
+
 ## Requirements
 * [fzf](https://github.com/junegunn/fzf)
 
