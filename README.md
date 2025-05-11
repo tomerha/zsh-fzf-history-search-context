@@ -32,9 +32,8 @@ plugins=(… zsh-fzf-history-search-context)
 
 | Variable                                  | Default                                 | Description                                                                                                |
 | ----------------------------------------- | --------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
-| `ZSH_FZF_HISTORY_SEARCH_CONTEXT_BIND`     | `'^r'`                                  | Keybind to trigger search                                                                      |
-| `ZSH_FZF_HISTORY_SEARCH_CONTEXT_HEIGHT`   | `0` (unlimited)                         | Limit the fzf height
-to this much                                                                |
+| `ZSH_FZF_HISTORY_SEARCH_CONTEXT_BIND`     | `'^r'`                                  | Keybind to trigger search                                                                                  |
+| `ZSH_FZF_HISTORY_SEARCH_CONTEXT_HEIGHT`   | `0` (unlimited)                         | Limit the fzf height to this much                                                                          |
 
 ## Thanks
 
