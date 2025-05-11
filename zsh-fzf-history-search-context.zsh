@@ -11,6 +11,10 @@ typeset -g ZSH_FZF_HISTORY_SEARCH_CONTEXT_BIND='^r'
 (( ! ${+ZSH_FZF_HISTORY_SEARCH_CONTEXT_HEIGHT} )) &&
 typeset -g ZSH_FZF_HISTORY_SEARCH_CONTEXT_HEIGHT='0'
 
+# Allow specifying the fzf style
+(( ! ${+ZSH_FZF_HISTORY_SEARCH_CONTEXT_STYLE} )) &&
+typeset -g ZSH_FZF_HISTORY_SEARCH_CONTEXT_STYLE='full'
+
 fzf_history_search_context() {
   # save history to file
   TEMP_HISTFILE=$(mktemp)
@@ -19,6 +23,7 @@ fzf_history_search_context() {
 
   # export env that the script will need
   export ZSH_FZF_HISTORY_SEARCH_CONTEXT_HEIGHT
+  export ZSH_FZF_HISTORY_SEARCH_CONTEXT_STYLE
 
   # run fzf
   SCRIPT=${THIS:A:h}/zsh-fzf-history-search-context-run.zsh
