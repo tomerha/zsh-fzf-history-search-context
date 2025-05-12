@@ -13,7 +13,11 @@ typeset -g ZSH_FZF_HISTORY_SEARCH_CONTEXT_HEIGHT='0'
 
 # Allow specifying the fzf style
 (( ! ${+ZSH_FZF_HISTORY_SEARCH_CONTEXT_STYLE} )) &&
-typeset -g ZSH_FZF_HISTORY_SEARCH_CONTEXT_STYLE='full'
+typeset -g ZSH_FZF_HISTORY_SEARCH_CONTEXT_STYLE='minimal'
+
+# Allow hiding the preview pane by default
+(( ! ${+ZSH_FZF_HISTORY_SEARCH_CONTEXT_HIDE} )) &&
+typeset -g ZSH_FZF_HISTORY_SEARCH_CONTEXT_HIDE=''
 
 fzf_history_search_context() {
   # save history to file
@@ -24,6 +28,7 @@ fzf_history_search_context() {
   # export env that the script will need
   export ZSH_FZF_HISTORY_SEARCH_CONTEXT_HEIGHT
   export ZSH_FZF_HISTORY_SEARCH_CONTEXT_STYLE
+  export ZSH_FZF_HISTORY_SEARCH_CONTEXT_HIDE
 
   # run fzf
   SCRIPT=${THIS:A:h}/zsh-fzf-history-search-context-run.zsh

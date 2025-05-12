@@ -10,6 +10,10 @@ FZF_ARGS="$FZF_ARGS --style $ZSH_FZF_HISTORY_SEARCH_CONTEXT_STYLE --bind=ctrl-/:
 FZF_ARGS="$FZF_ARGS --bind change:top"
 FZF_ARGS="$FZF_ARGS +s"  # do not sort
 
+if [ -n "$ZSH_FZF_HISTORY_SEARCH_CONTEXT_HIDE" ]; then
+  FZF_ARGS="$FZF_ARGS --preview-window=hidden"
+fi
+
 PREVIEW_CMD='(fc -li $(($(echo {1} | sed "s/\*//") - ($FZF_PREVIEW_LINES / 2))) $(($(echo {1} | sed "s/\*//") - 1)) 2>/dev/null | sed -EH "s/^\s*\d+\*?\s*/  /";
 fc -li {1} {1} | sed -EH "s/^\s*\d+\*?\s*/> /";
 fc -li $(($(echo {1} | sed "s/\*//") + 1)) $(($(echo {1} | sed "s/\*//") + ($FZF_PREVIEW_LINES / 2) - 1)) 2>/dev/null | sed -EH "s/^\s*\d+\*?\s*/  /") |
