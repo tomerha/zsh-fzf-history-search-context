@@ -19,6 +19,10 @@ typeset -g ZSH_FZF_HISTORY_SEARCH_CONTEXT_STYLE='minimal'
 (( ! ${+ZSH_FZF_HISTORY_SEARCH_CONTEXT_HIDE} )) &&
 typeset -g ZSH_FZF_HISTORY_SEARCH_CONTEXT_HIDE=''
 
+# Add blank lines around the selected line in the preview pane
+(( ! ${+ZSH_FZF_HISTORY_SEARCH_CONTEXT_EMPHASIZE} )) &&
+typeset -g ZSH_FZF_HISTORY_SEARCH_CONTEXT_EMPHASIZE='0'
+
 fzf_history_search_context() {
   # save history to file
   TEMP_HISTFILE=$(mktemp)
@@ -29,6 +33,7 @@ fzf_history_search_context() {
   export ZSH_FZF_HISTORY_SEARCH_CONTEXT_HEIGHT
   export ZSH_FZF_HISTORY_SEARCH_CONTEXT_STYLE
   export ZSH_FZF_HISTORY_SEARCH_CONTEXT_HIDE
+  export ZSH_FZF_HISTORY_SEARCH_CONTEXT_EMPHASIZE
 
   # run fzf
   SCRIPT=${THIS:A:h}/zsh-fzf-history-search-context-run.zsh

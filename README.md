@@ -32,12 +32,13 @@ plugins=(… zsh-fzf-history-search-context)
 
 ## Configuration Variables
 
-| Variable                                  | Default                                 | Description                                                                                                |
-| ----------------------------------------- | --------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
-| `ZSH_FZF_HISTORY_SEARCH_CONTEXT_BIND`     | `'^r'`                                  | Keybind to trigger search                                                                                  |
-| `ZSH_FZF_HISTORY_SEARCH_CONTEXT_HEIGHT`   | `0` (unlimited)                         | Limit the fzf height to this much                                                                          |
-| `ZSH_FZF_HISTORY_SEARCH_CONTEXT_STYLE`    | `minimal`                               | The fzf `--style` to use                                                                                   |
-| `ZSH_FZF_HISTORY_SEARCH_CONTEXT_HIDE`     | `` (disabled)                           | Hide the fzf preview pane by default                                                                       |
+| Variable                                   | Default                                 | Description                                                                                                |
+| ------------------------------------------ | --------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| `ZSH_FZF_HISTORY_SEARCH_CONTEXT_BIND`      | `'^r'`                                  | Keybind to trigger search                                                                                  |
+| `ZSH_FZF_HISTORY_SEARCH_CONTEXT_HEIGHT`    | `0` (unlimited)                         | Limit the fzf height to this much                                                                          |
+| `ZSH_FZF_HISTORY_SEARCH_CONTEXT_STYLE`     | `minimal`                               | The fzf `--style` to use                                                                                   |
+| `ZSH_FZF_HISTORY_SEARCH_CONTEXT_HIDE`      | `` (disabled)                           | Hide the fzf preview pane by default                                                                       |
+| `ZSH_FZF_HISTORY_SEARCH_CONTEXT_EMPHASIZE` | `0` (disabled, set to `1` to enable)    | Add blank lines around the selected line in the preview pane instead of prepending it with `> `            |
 
 ## Thanks
 
